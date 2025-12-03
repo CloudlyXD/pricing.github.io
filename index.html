@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #a78bfa, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #9ca3af;
+            font-size: 1.125rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card-wrapper {
+            background: linear-gradient(135deg, var(--gradient-from), var(--gradient-to));
+            padding: 2px;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .card-wrapper:hover {
+            transform: scale(1.05);
+        }
+
+        .card-wrapper.popular {
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, #9333ea, #ec4899);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .card {
+            background-color: #000000;
+            border-radius: 1rem;
+            padding: 2rem;
+            height: 100%;
+        }
+
+        .plan-name {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .period {
+            color: #9ca3af;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-text {
+            color: #e5e7eb;
+        }
+
+        .feature-text.disabled {
+            color: #6b7280;
+            text-decoration: line-through;
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: bold;
+            font-size: 1.125rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button.primary {
+            background: linear-gradient(to right, #9333ea, #ec4899);
+            box-shadow: 0 10px 25px rgba(147, 51, 234, 0.3);
+        }
+
+        .cta-button.primary:hover {
+            background: linear-gradient(to right, #7e22ce, #db2777);
+        }
+
+        .cta-button.secondary {
+            background-color: #1f2937;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: #374151;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-wrapper.popular {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Choose Your Power Level</h1>
+            <p class="subtitle">Start free, upgrade when you're ready to dominate</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- FREE PLAN -->
+            <div class="card-wrapper" style="--gradient-from: #374151; --gradient-to: #1f2937;">
+                <div class="card">
+                    <h2 class="plan-name">Free</h2>
+                    <div class="price-container">
+                        <span class="price">$0</span>
+                        <span class="period">/forever</span>
+                    </div>
+                    <ul class="features">
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">5 Streaks</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#ef4444" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <span class="feature-text disabled">Cannot Edit Streaks</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">Basic Analytics</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">Community Support</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#ef4444" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <span class="feature-text disabled">Priority Support</span>
+                        </li>
+                    </ul>
+                    <button class="cta-button secondary">Get Started</button>
+                </div>
+            </div>
+
+            <!-- PRO PLAN -->
+            <div class="card-wrapper popular" style="--gradient-from: #9333ea; --gradient-to: #ec4899;">
+                <div class="popular-badge">MOST POPULAR</div>
+                <div class="card">
+                    <h2 class="plan-name">Pro</h2>
+                    <div class="price-container">
+                        <span class="price">$9.99</span>
+                        <span class="period">/per month</span>
+                    </div>
+                    <ul class="features">
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">10 Streaks</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">Can Edit Streaks</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">Advanced Analytics</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">Priority Support</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">Custom Themes</span>
+                        </li>
+                    </ul>
+                    <button class="cta-button primary">Upgrade to Pro</button>
+                </div>
+            </div>
+
+            <!-- MAX PLAN -->
+            <div class="card-wrapper" style="--gradient-from: #eab308; --gradient-to: #ea580c;">
+                <div class="card">
+                    <h2 class="plan-name">Max</h2>
+                    <div class="price-container">
+                        <span class="price">$24.99</span>
+                        <span class="period">/per month</span>
+                    </div>
+                    <ul class="features">
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">50 Streaks</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">Can Edit Streaks</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">Advanced Analytics</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">Priority Support</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">Custom Themes</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">API Access</span>
+                        </li>
+                        <li class="feature">
+                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="feature-text">Team Collaboration</span>
+                        </li>
+                    </ul>
+                    <button class="cta-button secondary">Go Maximum</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>All plans include 30-day money-back guarantee</p>
+        </div>
+    </div>
+</body>
+</html>
