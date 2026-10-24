@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing Plans - Ultra Interactive</title>
+    <title>Neverlapse Pricing - Free, Pro &amp; Max</title>
     <style>
         * {
             margin: 0;
@@ -407,6 +407,65 @@
             animation: fadeIn 1.5s ease-out;
         }
 
+
+        .promise {
+            margin-top: 1rem;
+            color: #e5e7eb;
+            font-size: 1rem;
+        }
+
+        .billing-toggle {
+            display: inline-flex;
+            gap: 0.25rem;
+            margin-top: 1.5rem;
+            padding: 0.25rem;
+            border: 1px solid #374151;
+            border-radius: 9999px;
+            background: #0b0b0f;
+        }
+
+        .toggle-btn {
+            border: none;
+            background: transparent;
+            color: #9ca3af;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: none;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn.active {
+            background: linear-gradient(to right, #9333ea, #ec4899);
+            color: #fff;
+        }
+
+        .toggle-btn .save {
+            font-size: 0.7rem;
+            margin-left: 0.35rem;
+            color: #fbbf24;
+        }
+
+        .toggle-btn.active .save { color: #fff; }
+
+        .price-inr {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin: -1.5rem 0 1.5rem;
+            min-height: 1.2rem;
+        }
+
+        .feature:nth-child(8) { transition-delay: 0.4s; }
+        .feature:nth-child(9) { transition-delay: 0.45s; }
+        .feature:nth-child(10) { transition-delay: 0.5s; }
+        .feature:nth-child(11) { transition-delay: 0.55s; }
+        .feature:nth-child(12) { transition-delay: 0.6s; }
+
+        @media (max-width: 768px) {
+            .toggle-btn { cursor: pointer; }
+        }
+
         @media (max-width: 768px) {
             body { cursor: auto; }
             #cursor, #cursor-glow { display: none; }
@@ -438,150 +497,74 @@
     <div class="container">
         <div class="header">
             <h1 class="title">Choose Your Power Level</h1>
-            <p class="subtitle">Start free, upgrade when you're ready to dominate</p>
+            <p class="subtitle">Start free, upgrade when you want to flex harder</p>
+            <p class="promise">🏆 Rank is EARNED, never bought. A free user can out-rank a Max subscriber.</p>
+            <div class="billing-toggle" role="group" aria-label="Billing period">
+                <button class="toggle-btn active" data-period="monthly">Monthly</button>
+                <button class="toggle-btn" data-period="yearly">Yearly <span class="save">SAVE ~16%</span></button>
+            </div>
         </div>
 
         <div class="pricing-grid">
-            <!-- FREE PLAN -->
             <div class="card-wrapper" style="--gradient-from: #374151; --gradient-to: #1f2937;" data-tilt>
                 <div class="card">
                     <h2 class="plan-name">Free</h2>
-                    <div class="price-container">
-                        <span class="price">$0</span>
-                        <span class="period">/forever</span>
-                    </div>
+                    <div class="price-container"><span class="price">$0</span><span class="period">/forever</span></div>
+                    <div class="price-inr">&nbsp;</div>
                     <ul class="features">
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">5 Streaks</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#ef4444" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                            </svg>
-                            <span class="feature-text disabled">Cannot Edit Streaks</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">Basic Analytics</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">Community Support</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#ef4444" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                            </svg>
-                            <span class="feature-text disabled">Priority Support</span>
-                        </li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">5 active streaks</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Full ranked mode (reach SSS tier)</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Basic avatars &amp; frames</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Standard share cards</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Basic AI chatbot (10 msgs/day)</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Community access</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Up to 50 friends</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#ef4444" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg><span class="feature-text disabled">Animated frames &amp; custom cards</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#ef4444" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg><span class="feature-text disabled">Unlimited AI chatbot</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#ef4444" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg><span class="feature-text disabled">Advanced analytics</span></li>
                     </ul>
                     <button class="cta-button free">Get Started</button>
                 </div>
             </div>
-
-            <!-- PRO PLAN -->
             <div class="card-wrapper popular" style="--gradient-from: #9333ea; --gradient-to: #ec4899;" data-tilt>
                 <div class="popular-badge">MOST POPULAR</div>
                 <div class="card">
                     <h2 class="plan-name">Pro</h2>
-                    <div class="price-container">
-                        <span class="price">$9.99</span>
-                        <span class="period">/per month</span>
-                    </div>
+                    <div class="price-container"><span class="price" data-monthly="$5.99" data-yearly="$59.99">$5.99</span><span class="period" data-monthly="/per month" data-yearly="/per year">/per month</span></div>
+                    <div class="price-inr" data-monthly="≈ ₹538/month" data-yearly="≈ ₹5,390/year · save ~16%">≈ ₹538/month</div>
                     <ul class="features">
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">10 Streaks</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">Can Edit Streaks</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">Advanced Analytics</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">Priority Support</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">Custom Themes</span>
-                        </li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">20 active streaks</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Full ranked mode (reach SSS tier)</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Premium avatars &amp; animated frames</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Custom share card templates</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Unlimited AI chatbot</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Advanced analytics &amp; insights</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Pro badge on profile</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Early access to new features</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Priority support</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Up to 200 friends</span></li>
                     </ul>
                     <button class="cta-button primary">Upgrade to Pro</button>
                 </div>
             </div>
-
-            <!-- MAX PLAN -->
             <div class="card-wrapper" style="--gradient-from: #eab308; --gradient-to: #ea580c;" data-tilt>
                 <div class="card">
                     <h2 class="plan-name">Max</h2>
-                    <div class="price-container">
-                        <span class="price">$24.99</span>
-                        <span class="period">/per month</span>
-                    </div>
+                    <div class="price-container"><span class="price" data-monthly="$11.99" data-yearly="$119.99">$11.99</span><span class="period" data-monthly="/per month" data-yearly="/per year">/per month</span></div>
+                    <div class="price-inr" data-monthly="≈ ₹1,077/month" data-yearly="≈ ₹10,780/year · save ~16%">≈ ₹1,077/month</div>
                     <ul class="features">
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">50 Streaks</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">Can Edit Streaks</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">Advanced Analytics</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">Priority Support</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">Custom Themes</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">API Access</span>
-                        </li>
-                        <li class="feature">
-                            <svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="feature-text">Team Collaboration</span>
-                        </li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Unlimited active streaks</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Full ranked mode (reach SSS tier)</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">ALL avatars &amp; frames (incl. seasonal exclusives)</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Fully customizable profile themes</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">AI-generated 3D character</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Personal achievement video generation</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Custom streak categories</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Exclusive MAX badge</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Exclusive MAX-only community channels</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Lifetime statistics archive</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">Unlimited friends</span></li>
+                        <li class="feature"><svg class="feature-icon" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="feature-text">White-glove support</span></li>
                     </ul>
                     <button class="cta-button max">Go Maximum</button>
                 </div>
@@ -589,7 +572,7 @@
         </div>
 
         <div class="footer">
-            <p>All plans include 30-day money-back guarantee</p>
+            <p>No pay-to-win. Subscriptions sell expression, convenience, status and experience — never rank, points or leaderboard advantage.</p>
         </div>
     </div>
 
@@ -689,6 +672,21 @@
                 cursor.style.transform = 'scale(1)';
                 cursor.style.borderColor = '#ec4899';
             });
+        });
+
+
+        // Monthly / yearly toggle
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const p = btn.dataset.period;
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.toggle('active', b === btn));
+                document.querySelectorAll('[data-monthly]').forEach(el => {
+                    if (el.classList.contains('toggle-btn')) return;
+                    el.textContent = el.dataset[p];
+                });
+            });
+            btn.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(1.5)'; });
+            btn.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; });
         });
 
         // Parallax scroll effect
